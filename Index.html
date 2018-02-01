@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="angular.js"></script>
+    <script src="MainController.js"></script>
+    <link href="../CSS/StyleSheet.css" rel="stylesheet" />
+    <link href="CSS/bootstrap.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body ng-app="myapp" ng-controller="mainController" class="container">
+    <h1>Contact Tree</h1>
+        <div ng-repeat="item in contacts">
+            <div class="name" ng-click="clicked(item,!item.clicked)">{{item.name}}</div>
+            <div ng-repeat="item2 in ContactsLst(item)">
+                <div class="name" ng-click="clicked(item2,!item2.clicked)">{{item2.name}}</div>
+                <div ng-repeat="item3 in ContactsLst(item2)">
+                    <div class="name" ng-click="clicked(item3,!item3.clicked)">{{item3.name}}</div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
